@@ -210,31 +210,31 @@ theme.loadTreeSitter = function ()
         TSAnnotation =              { fg = flatwhite.black, bg = flatwhite.green},
         TSAttribute =               { fg = flatwhite.black, bg = flatwhite.blue},
         TSBoolean=                  { fg = flatwhite.black, bg = flatwhite.cyan},
-        TSCharacter=                { fg = flatwhite.black, bg = flatwhite.purple},
-        TSConstructor =             { fg = flatwhite.black, bg = flatwhite.orange},
+        TSCharacter=                { fg = flatwhite.black},
+        TSConstructor =             { fg = flatwhite.black},
         TSConstant =                { fg = flatwhite.black, bg = flatwhite.pink},
-        TSConstBuiltin =            { fg = flatwhite.black, bg = flatwhite.red},
-        TSConstMacro =              { fg = flatwhite.black, bg = flatwhite.green},
+        TSConstBuiltin =            { fg = flatwhite.black},
+        TSConstMacro =              { fg = flatwhite.black},
         TSError =                   { fg = flatwhite.black, bg = flatwhite.orange},
         TSException =               { fg = flatwhite.black, bg = flatwhite.green},
-        TSField =                   { fg = flatwhite.black, bg = flatwhite.blue},
+        TSField =                   { fg = flatwhite.black},
         TSFloat =                   { fg = flatwhite.black, bg = flatwhite.blue},
         TSFuncMacro =               { fg = flatwhite.black, bg = flatwhite.pink},
         TSInclude =                 { fg = flatwhite.black, bg = flatwhite.pink},
         TSLabel =                   { fg = flatwhite.black, bg = flatwhite.orange},
         TSNamespace =               { fg = flatwhite.black, bg = flatwhite.orange},
-        TSNumber =                  { fg = flatwhite.black, bg = flatwhite.orange},
-        TSOperator =                { fg = flatwhite.black, bg = flatwhite.orange},
-        TSParameter =               { fg = flatwhite.black, bg = flatwhite.orange},
-        TSParameterReference=       { fg = flatwhite.black, bg = flatwhite.cyan},
-        TSProperty =                { fg = flatwhite.black, bg = flatwhite.cyan},
-        TSPunctDelimiter =          { fg = flatwhite.black, bg = flatwhite.cyan},
-        TSPunctBracket =            { fg = flatwhite.black, bg = flatwhite.cyan},
-        TSPunctSpecial =            { fg = flatwhite.black, bg = flatwhite.blue},
-        TSString =                  { fg = flatwhite.black, bg = flatwhite.blue},
+        TSNumber =                  { fg = flatwhite.black},
+        TSOperator =                { fg = flatwhite.black},
+        TSParameter =               { fg = flatwhite.black},
+        TSParameterReference=       { fg = flatwhite.black},
+        TSProperty =                { fg = flatwhite.black},
+        TSPunctDelimiter =          { fg = flatwhite.black},
+        TSPunctBracket =            { fg = flatwhite.black},
+        TSPunctSpecial =            { fg = flatwhite.black},
+        TSString =                  { fg = flatwhite.black},
         TSStringRegex =             { fg = flatwhite.black, bg = flatwhite.blue},
         TSStringEscape =            { fg = flatwhite.black, bg = flatwhite.purple},
-        TSSymbol =                  { fg = flatwhite.black, bg = flatwhite.purple},
+        TSSymbol =                  { fg = flatwhite},
         TSType =                    { fg = flatwhite.black, bg = flatwhite.purple},
         TSTypeBuiltin =             { fg = flatwhite.black, bg = flatwhite.purple},
         TSTag =                     { fg = flatwhite.black, bg = flatwhite.purple},
@@ -261,11 +261,11 @@ theme.loadTreeSitter = function ()
         treesitter.TSKeywordFunction =         { fg = flatwhite.purple } -- For keywords used to define a fuction.
 
         treesitter.TSFunction =                { fg = flatwhite.black, bg = flatwhite.blue}
-        treesitter.TSMethod =                  { fg = flatwhite.black, bg = flatwhite.blue}
+        treesitter.TSMethod =                  { fg = flatwhite.black, bg = flatwhite.purple}
         treesitter.TSFuncBuiltin =             { fg = flatwhite.black, bg = flatwhite.blue}
 
-        treesitter.TSVariable =                { fg = flatwhite.black, bg = flatwhite.blue}
-        treesitter.TSVariableBuiltin =         { fg = flatwhite.black, bg = flatwhite.blue}
+        treesitter.TSVariable =                { fg = flatwhite.black, bg = flatwhite.purple}
+        treesitter.TSVariableBuiltin =         { fg = flatwhite.black}
 
     return treesitter
 
