@@ -318,7 +318,7 @@ theme.loadPlugins = function()
         diffAdded =                             { fg = flatwhite.green },
         diffRemoved =                           { fg = flatwhite.red },
         diffChanged =                           { fg = flatwhite.yellow },
-        diffOldFile =                           { fg = flatwhite.yelow },
+        diffOldFile =                           { fg = flatwhite.yellow },
         diffNewFile =                           { fg = flatwhite.orange },
         diffFile =                              { fg = flatwhite.blue },
         diffLine =                              { fg = flatwhite.comments },
