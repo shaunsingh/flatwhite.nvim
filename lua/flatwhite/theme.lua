@@ -1,4 +1,4 @@
-local flatwhite = require("moonlight.colors")
+local flatwhite = require("flatwhite.colors")
 
 local theme = {}
 
@@ -10,7 +10,7 @@ theme.loadSyntax = function ()
 		StorageClass =				{ fg = flatwhite.cyan }, -- static, register, volatile, etc.
 		Structure =					{ fg = flatwhite.puple }, -- struct, union, enum, etc.
 		Constant =					{ fg = flatwhite.yellow }, -- any constant
-		String =					{ fg = flatwhite.green, bg = moonlight.none, style= 'italic' }, -- Any string
+		String =					{ fg = flatwhite.green, bg = flatwhite.none, style= 'italic' }, -- Any string
 		Character =					{ fg = flatwhite.orange }, -- any character constant: 'c', '\n'
 		Number =					{ fg = flatwhite.orange }, -- a number constant: 5
 		Boolean =					{ fg = flatwhite.orange }, -- a boolean constant: TRUE, false
@@ -31,10 +31,10 @@ theme.loadSyntax = function ()
 		Delimiter =					{ fg = flatwhite.cyan }, -- character that needs attention like , or .
 		SpecialComment =			{ fg = flatwhite.gray }, -- special things inside a comment
 		Debug =						{ fg = flatwhite.red }, -- debugging statements
-		Underlined =				{ fg = flatwhite.link, bg = moonlight.none, style = 'underline' }, -- text that stands out, HTML links
+		Underlined =				{ fg = flatwhite.link, bg = flatwhite.none, style = 'underline' }, -- text that stands out, HTML links
 		Ignore =					{ fg = flatwhite.disabled }, -- left blank, hidden
-		Error =						{ fg = flatwhite.error, bg = moonlight.none, style = 'bold,underline' }, -- any erroneous construct
-		Todo =						{ fg = flatwhite.yellow, bg = moonlight.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error =						{ fg = flatwhite.error, bg = flatwhite.none, style = 'bold,underline' }, -- any erroneous construct
+		Todo =						{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
         htmlLink = { fg = flatwhite.link, style = "underline" },
         htmlH1 = { fg = flatwhite.cyan, style = "bold" },
@@ -54,16 +54,16 @@ theme.loadSyntax = function ()
 
 	-- Italic comments
 	if vim.g.flatwhite_italic_comments == true then
-		syntax.Comment =		{fg = flatwhite.comments, bg = moonlight.none, style = 'italic'} -- italic comments
+		syntax.Comment =		{fg = flatwhite.comments, bg = flatwhite.none, style = 'italic'} -- italic comments
 	else
 		syntax.Comment =		{fg = flatwhite.comments} -- normal comments
 	end
 
 	-- Italic Keywords
 	if vim.g.flatwhite_italic_keywords == true then
-		syntax.Conditional =		{fg = flatwhite.purple, bg = moonlight.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = flatwhite.purple, bg = moonlight.none, style = 'italic'} -- italic for, do, while, etc.
-		syntax.Repeat =				{fg = flatwhite.purple, bg = moonlight.none, style = 'italic'} -- italic any other keyword
+		syntax.Conditional =		{fg = flatwhite.purple, bg = flatwhite.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
+		syntax.Keyword =			{fg = flatwhite.purple, bg = flatwhite.none, style = 'italic'} -- italic for, do, while, etc.
+		syntax.Repeat =				{fg = flatwhite.purple, bg = flatwhite.none, style = 'italic'} -- italic any other keyword
 	else
 		syntax.Conditional =		{fg = flatwhite.purple} -- normal if, then, else, endif, switch, etc.
 		syntax.Keyword =			{fg = flatwhite.purple} -- normal for, do, while, etc.
@@ -72,13 +72,13 @@ theme.loadSyntax = function ()
 
 	-- Italic Function names
 	if vim.g.flatwhite_italic_functions == true then
-		syntax.Function =		{fg = flatwhite.blue, bg = moonlight.none, style = 'italic'} -- italic funtion names
+		syntax.Function =		{fg = flatwhite.blue, bg = flatwhite.none, style = 'italic'} -- italic funtion names
 	else
 		syntax.Function =		{fg = flatwhite.blue} -- normal function names
 	end
 
 	if vim.g.flatwhite_italic_variables == true then
-		Identifier =				{fg = flatwhite.gray, bg = moonlight.none, style = 'italic'}; -- any variable name
+		Identifier =				{fg = flatwhite.gray, bg = flatwhite.none, style = 'italic'}; -- any variable name
     else
 		Identifier =				{fg = flatwhite.gray}; -- any variable name
     end
@@ -92,61 +92,61 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-		NormalFloat =			{ fg = flatwhite.fg, bg = moonlight.float }, -- normal text and background color
-		ColorColumn =			{ fg = flatwhite.none, bg = moonlight.active }, --  used for the columns set with 'colorcolumn'
+		NormalFloat =			{ fg = flatwhite.fg, bg = flatwhite.float }, -- normal text and background color
+		ColorColumn =			{ fg = flatwhite.none, bg = flatwhite.active }, --  used for the columns set with 'colorcolumn'
 		Conceal =				{ fg = flatwhite.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor =				{ fg = flatwhite.cursor, bg = moonlight.none, style = 'reverse' }, -- the character under the cursor
-		CursorIM =				{ fg = flatwhite.cursor, bg = moonlight.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
-		Directory =				{ fg = flatwhite.blue, bg = moonlight.none }, -- directory names (and other special names in listings)
-		DiffAdd =				{ fg = flatwhite.green, bg = moonlight.none, style = 'reverse' }, -- diff mode: Added line
-		DiffChange =			{ fg = flatwhite.orange, bg = moonlight.none, style = 'reverse' }, --  diff mode: Changed line
-		DiffDelete =			{ fg = flatwhite.red, bg = moonlight.none, style = 'reverse' }, -- diff mode: Deleted line
-		DiffText =				{ fg = flatwhite.yellow, bg = moonlight.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
+		Cursor =				{ fg = flatwhite.cursor, bg = flatwhite.none, style = 'reverse' }, -- the character under the cursor
+		CursorIM =				{ fg = flatwhite.cursor, bg = flatwhite.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
+		Directory =				{ fg = flatwhite.blue, bg = flatwhite.none }, -- directory names (and other special names in listings)
+		DiffAdd =				{ fg = flatwhite.green, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Added line
+		DiffChange =			{ fg = flatwhite.orange, bg = flatwhite.none, style = 'reverse' }, --  diff mode: Changed line
+		DiffDelete =			{ fg = flatwhite.red, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Deleted line
+		DiffText =				{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
 		EndOfBuffer =			{ fg = flatwhite.disabled },
 		ErrorMsg =				{ fg = flatwhite.none },
-		Folded =				{ fg = flatwhite.disabled, bg = moonlight.none, style = 'italic' },
+		Folded =				{ fg = flatwhite.disabled, bg = flatwhite.none, style = 'italic' },
 		FoldColumn =			{ fg = flatwhite.blue },
-		IncSearch =				{ fg = flatwhite.highlight, bg = moonlight.white, style = 'reverse' },
+		IncSearch =				{ fg = flatwhite.highlight, bg = flatwhite.white, style = 'reverse' },
 		LineNr =				{ fg = flatwhite.line_numbers },
 		CursorLineNr =			{ fg = flatwhite.accent },
-		MatchParen =			{ fg = flatwhite.yellow, bg = moonlight.none, style = 'bold' },
+		MatchParen =			{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'bold' },
 		ModeMsg =				{ fg = flatwhite.accent },
 		MoreMsg =				{ fg = flatwhite.accent },
 		NonText =				{ fg = flatwhite.disabled },
-		Pmenu =					{ fg = flatwhite.text, bg = moonlight.contrast },
-		PmenuSel =				{ fg = flatwhite.accent, bg = moonlight.active },
-		PmenuSbar =				{ fg = flatwhite.text, bg = moonlight.contrast },
-		PmenuThumb =			{ fg = flatwhite.fg, bg = moonlight.accent },
+		Pmenu =					{ fg = flatwhite.text, bg = flatwhite.contrast },
+		PmenuSel =				{ fg = flatwhite.accent, bg = flatwhite.active },
+		PmenuSbar =				{ fg = flatwhite.text, bg = flatwhite.contrast },
+		PmenuThumb =			{ fg = flatwhite.fg, bg = flatwhite.accent },
 		Question =				{ fg = flatwhite.green },
-		QuickFixLine =			{ fg = flatwhite.highlight, bg = moonlight.white, style = 'reverse' },
-		qfLineNr =				{ fg = flatwhite.highlight, bg = moonlight.white, style = 'reverse' },
-		Search =				{ fg = flatwhite.highlight, bg = moonlight.white, style = 'reverse' },
+		QuickFixLine =			{ fg = flatwhite.highlight, bg = flatwhite.white, style = 'reverse' },
+		qfLineNr =				{ fg = flatwhite.highlight, bg = flatwhite.white, style = 'reverse' },
+		Search =				{ fg = flatwhite.highlight, bg = flatwhite.white, style = 'reverse' },
 		SpecialKey =			{ fg = flatwhite.purple },
-		SpellBad =				{ fg = flatwhite.red, bg = moonlight.none, style = 'italic,undercurl' },
-		SpellCap =				{ fg = flatwhite.blue, bg = moonlight.none, style = 'italic,undercurl' },
-		SpellLocal =			{ fg = flatwhite.cyan, bg = moonlight.none, style = 'italic,undercurl' },
-		SpellRare =				{ fg = flatwhite.purple, bg = moonlight.none, style = 'italic,undercurl' },
-		StatusLine =			{ fg = flatwhite.fg, bg = moonlight.contrast },
-		StatusLineNC =  		{ fg = flatwhite.text, bg = moonlight.disabled },
-		StatusLineTerm =		{ fg = flatwhite.fg, bg = moonlight.contrast },
-		StatusLineTermNC =		{ fg = flatwhite.text, bg = moonlight.disabled },
+		SpellBad =				{ fg = flatwhite.red, bg = flatwhite.none, style = 'italic,undercurl' },
+		SpellCap =				{ fg = flatwhite.blue, bg = flatwhite.none, style = 'italic,undercurl' },
+		SpellLocal =			{ fg = flatwhite.cyan, bg = flatwhite.none, style = 'italic,undercurl' },
+		SpellRare =				{ fg = flatwhite.purple, bg = flatwhite.none, style = 'italic,undercurl' },
+		StatusLine =			{ fg = flatwhite.fg, bg = flatwhite.contrast },
+		StatusLineNC =  		{ fg = flatwhite.text, bg = flatwhite.disabled },
+		StatusLineTerm =		{ fg = flatwhite.fg, bg = flatwhite.contrast },
+		StatusLineTermNC =		{ fg = flatwhite.text, bg = flatwhite.disabled },
 		TabLineFill =			{ fg = flatwhite.fg },
-		TablineSel =			{ fg = flatwhite.bg, bg = moonlight.accent },
+		TablineSel =			{ fg = flatwhite.bg, bg = flatwhite.accent },
 		Tabline =				{ fg = flatwhite.fg },
-		Title =					{ fg = flatwhite.green, bg = moonlight.none, style = 'bold' },
-		Visual =				{ fg = flatwhite.none, bg = moonlight.selection },
-		VisualNOS =				{ fg = flatwhite.none, bg = moonlight.selection },
+		Title =					{ fg = flatwhite.green, bg = flatwhite.none, style = 'bold' },
+		Visual =				{ fg = flatwhite.none, bg = flatwhite.selection },
+		VisualNOS =				{ fg = flatwhite.none, bg = flatwhite.selection },
 		WarningMsg =			{ fg = flatwhite.yellow },
-		WildMenu =				{ fg = flatwhite.orange, bg = moonlight.none, style = 'bold' },
-		CursorColumn =			{ fg = flatwhite.none, bg = moonlight.active },
-		CursorLine =			{ fg = flatwhite.none, bg = moonlight.none },
-		ToolbarLine =			{ fg = flatwhite.fg, bg = moonlight.bg_alt },
-		ToolbarButton =			{ fg = flatwhite.fg, bg = moonlight.none, style = 'bold' },
-		NormalMode =			{ fg = flatwhite.accent, bg = moonlight.none, style = 'reverse' },
-		InsertMode =			{ fg = flatwhite.green, bg = moonlight.none, style = 'reverse' },
-		ReplacelMode =			{ fg = flatwhite.red, bg = moonlight.none, style = 'reverse' },
-		VisualMode =			{ fg = flatwhite.purple, bg = moonlight.none, style = 'reverse' },
-		CommandMode =			{ fg = flatwhite.gray, bg = moonlight.none, style = 'reverse' },
+		WildMenu =				{ fg = flatwhite.orange, bg = flatwhite.none, style = 'bold' },
+		CursorColumn =			{ fg = flatwhite.none, bg = flatwhite.active },
+		CursorLine =			{ fg = flatwhite.none, bg = flatwhite.none },
+		ToolbarLine =			{ fg = flatwhite.fg, bg = flatwhite.bg_alt },
+		ToolbarButton =			{ fg = flatwhite.fg, bg = flatwhite.none, style = 'bold' },
+		NormalMode =			{ fg = flatwhite.accent, bg = flatwhite.none, style = 'reverse' },
+		InsertMode =			{ fg = flatwhite.green, bg = flatwhite.none, style = 'reverse' },
+		ReplacelMode =			{ fg = flatwhite.red, bg = flatwhite.none, style = 'reverse' },
+		VisualMode =			{ fg = flatwhite.purple, bg = flatwhite.none, style = 'reverse' },
+		CommandMode =			{ fg = flatwhite.gray, bg = flatwhite.none, style = 'reverse' },
 		Warnings =				{ fg = flatwhite.yellow },
 
         healthError =           { fg = flatwhite.error },
@@ -165,11 +165,11 @@ theme.loadEditor = function ()
 
     --Set transparent background
     if vim.g.flatwhite_disable_background == true then
-		editor.Normal =				{ fg = flatwhite.fg, bg = moonlight.none } -- normal text and background color
-		editor.SignColumn =			{ fg = flatwhite.fg, bg = moonlight.none }
+		editor.Normal =				{ fg = flatwhite.fg, bg = flatwhite.none } -- normal text and background color
+		editor.SignColumn =			{ fg = flatwhite.fg, bg = flatwhite.none }
     else
-		editor.Normal =				{ fg = flatwhite.fg, bg = moonlight.bg } -- normal text and background color
-		editor.SignColumn =			{ fg = flatwhite.fg, bg = moonlight.bg }
+		editor.Normal =				{ fg = flatwhite.fg, bg = flatwhite.bg } -- normal text and background color
+		editor.SignColumn =			{ fg = flatwhite.fg, bg = flatwhite.bg }
     end
 
     -- Remove window split borders
@@ -243,9 +243,9 @@ theme.loadTreeSitter = function ()
         TSText =                    { fg = flatwhite.text },    -- For strings considered text in a markup language.
         TSTextReference =           { fg = flatwhite.yellow }, -- FIXME
         TSEmphasis =                { fg = flatwhite.paleblue },    -- For text to be represented with emphasis.
-        TSUnderline =               { fg = flatwhite.fg, bg = moonlight.none, style = 'underline' },    -- For text to be represented with an underline.
+        TSUnderline =               { fg = flatwhite.fg, bg = flatwhite.none, style = 'underline' },    -- For text to be represented with an underline.
         TSStrike =                  { },    -- For strikethrough text.
-        TSTitle =                   { fg = flatwhite.paleblue, bg = moonlight.none, style = 'bold' },    -- Text that is part of a title.
+        TSTitle =                   { fg = flatwhite.paleblue, bg = flatwhite.none, style = 'bold' },    -- Text that is part of a title.
         TSLiteral =                 { fg = flatwhite.fg },    -- Literal text.
         TSURI =                     { fg = flatwhite.link },    -- Any URI like a link or email.
     }
@@ -254,7 +254,7 @@ theme.loadTreeSitter = function ()
 
     -- Italic comments
     if vim.g.flatwhite_italic_comments == true then
-        treesitter.TSComment=                  { fg = flatwhite.comments , bg = moonlight.none, style = 'italic' }    -- For comment blocks.
+        treesitter.TSComment=                  { fg = flatwhite.comments , bg = flatwhite.none, style = 'italic' }    -- For comment blocks.
     else
         treesitter.TSComment=                  { fg = flatwhite.comments }    -- For comment blocks.
     end
@@ -317,9 +317,9 @@ theme.loadLSP = function ()
         LspDiagnosticsFloatingHint =            { fg = flatwhite.purple  }, -- used for "Hint" diagnostic messages in the diagnostics float
         LspDiagnosticsVirtualTextHint =         { fg = flatwhite.purple  }, -- Virtual text "Hint"
         LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = flatwhite.paleblue }, -- used to underline "Hint" diagnostics.
-        LspReferenceText =                      { fg = flatwhite.accent, bg = moonlight.highlight }, -- used for highlighting "text" references
-        LspReferenceRead =                      { fg = flatwhite.accent, bg = moonlight.highlight }, -- used for highlighting "read" references
-        LspReferenceWrite =                     { fg = flatwhite.accent, bg = moonlight.highlight }, -- used for highlighting "write" references
+        LspReferenceText =                      { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "text" references
+        LspReferenceRead =                      { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "read" references
+        LspReferenceWrite =                     { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "write" references
     }
 
     return lsp
@@ -333,8 +333,8 @@ theme.loadPlugins = function()
 
         -- LspTrouble
         LspTroubleText =                        { fg = flatwhite.text },
-        LspTroubleCount =                       { fg = flatwhite.purple, bg = moonlight.active },
-        LspTroubleNormal =                      { fg = flatwhite.fg, bg = moonlight.sidebar },
+        LspTroubleCount =                       { fg = flatwhite.purple, bg = flatwhite.active },
+        LspTroubleNormal =                      { fg = flatwhite.fg, bg = flatwhite.sidebar },
 
         -- Diff
         diffAdded =                             { fg = flatwhite.green },
@@ -349,9 +349,9 @@ theme.loadPlugins = function()
         -- Neogit
         NeogitBranch =                          { fg = flatwhite.paleblue },
         NeogitRemote =                          { fg = flatwhite.purple },
-        NeogitHunkHeader =                      { fg = flatwhite.fg, bg = moonlight.highlight },
-        NeogitHunkHeaderHighlight =             { fg = flatwhite.blue, bg = moonlight.contrast },
-        NeogitDiffContextHighlight =            { fg = flatwhite.text, bg = moonlight.contrast },
+        NeogitHunkHeader =                      { fg = flatwhite.fg, bg = flatwhite.highlight },
+        NeogitHunkHeaderHighlight =             { fg = flatwhite.blue, bg = flatwhite.contrast },
+        NeogitDiffContextHighlight =            { fg = flatwhite.text, bg = flatwhite.contrast },
         NeogitDiffDeleteHighlight =             { fg = flatwhite.red },
         NeogitDiffAddHighlight =                { fg = flatwhite.green },
 
@@ -378,7 +378,7 @@ theme.loadPlugins = function()
         TelescopeSelectionCaret =               { fg = flatwhite.purple },
         TelescopeSelection =                    { fg = flatwhite.purple },
         TelescopeMatching =                     { fg = flatwhite.cyan },
-        TelescopeNormal =                       { fg = flatwhite.fg, bg = moonlight.float },
+        TelescopeNormal =                       { fg = flatwhite.fg, bg = flatwhite.float },
 
         -- NvimTree
         NvimTreeRootFolder =                    { fg = flatwhite.blue, style = "bold" },
@@ -432,7 +432,7 @@ theme.loadPlugins = function()
         BufferLineFill =                        { bg = flatwhite.bg_alt },
 
         -- Sneak
-        Sneak =                                 { fg = flatwhite.bg, bg = moonlight.accent },
+        Sneak =                                 { fg = flatwhite.bg, bg = flatwhite.accent },
         SneakScope =                            { bg = flatwhite.selection },
 
         -- Indent Blankline
@@ -448,9 +448,9 @@ theme.loadPlugins = function()
 
     -- Disable nvim-tree background
         if vim.g.flatwhite_disable_background == true then
-            plugins.NvimTreeNormal =                        { fg = flatwhite.fg, bg = moonlight.none }
+            plugins.NvimTreeNormal =                        { fg = flatwhite.fg, bg = flatwhite.none }
         else
-            plugins.NvimTreeNormal =                        { fg = flatwhite.fg, bg = moonlight.sidebar }
+            plugins.NvimTreeNormal =                        { fg = flatwhite.fg, bg = flatwhite.sidebar }
         end
 
     return plugins
