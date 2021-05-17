@@ -1,3 +1,4 @@
+
 local util = {}
 local flatwhite = require('flatwhite.theme')
 
@@ -14,17 +15,17 @@ util.highlight = function (group, color)
     if color.link then vim.cmd("highlight! link " .. group .. " " .. color.link) end
 end
 
--- Only define Flatwhite if it's the active colorshceme
+-- Only define Material if it's the active colorshceme
 function util.onColorScheme()
-  if vim.g.colors_name ~= "flatwhite" then
-    vim.cmd [[autocmd! Flatwhite]]
-    vim.cmd [[augroup! Flatwhite]]
-  end
+    if vim.g.colors_name ~= "flatwhite" then
+        vim.cmd [[autocmd! Material]]
+        vim.cmd [[augroup! Material]]
+    end
 end
 
--- Change the background for the terminal, packer and qf windows
+-- Change the background for the terminal and packer windows
 util.contrast = function ()
-    vim.cmd [[augroup Flatwhite]]
+    vim.cmd [[augroup Material]]
     vim.cmd [[  autocmd!]]
     vim.cmd [[  autocmd ColorScheme * lua require("flatwhite.util").onColorScheme()]]
     vim.cmd [[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
@@ -52,22 +53,17 @@ function util.load()
         local treesitter = flatwhite.loadTreeSitter()
         local lsp = flatwhite.loadLSP()
 
-        -- loop trough the plugins table and highlight every member
         for group, colors in pairs(plugins) do
             util.highlight(group, colors)
         end
 
-        -- loop trough the treesitter table and highlight every member
         for group, colors in pairs(treesitter) do
             util.highlight(group, colors)
         end
 
-        -- loop trough the lsp table and highlight every member
         for group, colors in pairs(lsp) do
             util.highlight(group, colors)
         end
-
-        -- if contrast is enabled, apply it to sidebars and floating windows
         if vim.g.flatwhite_contrast == true then
             util.contrast()
         end
@@ -75,21 +71,17 @@ function util.load()
 
     end))
 
-    -- load the most importaint parts of the theme
+    -- load base theme
     local editor = flatwhite.loadEditor()
     local syntax = flatwhite.loadSyntax()
 
-    -- load editor highlights
     for group, colors in pairs(editor) do
         util.highlight(group, colors)
     end
 
-    -- load syntax highlights
     for group, colors in pairs(syntax) do
         util.highlight(group, colors)
     end
-
-    -- load the rest later ( lsp, treesitter, plugins )
     async:send()
 end
 
