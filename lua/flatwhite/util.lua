@@ -1,5 +1,5 @@
 local util = {}
-local flatwhite = require('moonlight.theme')
+local flatwhite = require('flatwhite.theme')
 
 -- Go trough the table and highlight the group with the color values
 util.highlight = function (group, color)
