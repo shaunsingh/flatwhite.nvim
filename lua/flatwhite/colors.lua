@@ -38,11 +38,11 @@ local flatwhite = {
 
 -- Enable contrast sidebars, floating windows and popup menus
 if vim.g.flatwhite_contrast == false then
-    flatwhite.sidebar = moonlight.bg
-    flatwhite.float = moonlight.bg
+    flatwhite.sidebar = flatwhite.bg
+    flatwhite.float = flatwhite.bg
 else
-    flatwhite.sidebar = moonlight.bg_alt
-    flatwhite.float = moonlight.bg_alt
+    flatwhite.sidebar = flatwhite.bg_alt
+    flatwhite.float = flatwhite.bg_alt
 end
 
 return flatwhite
