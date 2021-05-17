@@ -8,7 +8,7 @@ theme.loadSyntax = function ()
 	local syntax = {
 		Type =						{ fg = flatwhite.purple }, -- int, long, char, etc.
 		StorageClass =				{ fg = flatwhite.cyan }, -- static, register, volatile, etc.
-		Structure =					{ fg = flatwhite.puple }, -- struct, union, enum, etc.
+		Structure =					{ fg = flatwhite.purple }, -- struct, union, enum, etc.
 		Constant =					{ fg = flatwhite.yellow }, -- any constant
 		String =					{ fg = flatwhite.green, bg = flatwhite.none, style= 'italic' }, -- Any string
 		Character =					{ fg = flatwhite.orange }, -- any character constant: 'c', '\n'
