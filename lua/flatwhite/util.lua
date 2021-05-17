@@ -14,17 +14,17 @@ util.highlight = function (group, color)
     if color.link then vim.cmd("highlight! link " .. group .. " " .. color.link) end
 end
 
--- Only define Moonlight if it's the active colorshceme
+-- Only define Flatwhite if it's the active colorshceme
 function util.onColorScheme()
   if vim.g.colors_name ~= "flatwhite" then
-    vim.cmd [[autocmd! Moonlight]]
-    vim.cmd [[augroup! Moonlight]]
+    vim.cmd [[autocmd! Flatwhite]]
+    vim.cmd [[augroup! Flatwhite]]
   end
 end
 
 -- Change the background for the terminal, packer and qf windows
 util.contrast = function ()
-    vim.cmd [[augroup Moonlight]]
+    vim.cmd [[augroup Flatwhite]]
     vim.cmd [[  autocmd!]]
     vim.cmd [[  autocmd ColorScheme * lua require("flatwhite.util").onColorScheme()]]
     vim.cmd [[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
