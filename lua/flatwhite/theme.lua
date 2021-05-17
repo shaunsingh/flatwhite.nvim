@@ -31,7 +31,7 @@ theme.loadSyntax = function ()
 		Delimiter =					{ fg = flatwhite.cyan }, -- character that needs attention like , or .
 		SpecialComment =			{ fg = flatwhite.gray }, -- special things inside a comment
 		Debug =						{ fg = flatwhite.red }, -- debugging statements
-		Underlined =				{ fg = flatwhite.link, bg = flatwhite.none, style = 'underline' }, -- text that stands out, HTML links
+		Underlined =				{ fg = flatwhite.link, bg = flatwhite.none, style = 'underline' }, -- black that stands out, HTML links
 		Ignore =					{ fg = flatwhite.disabled }, -- left blank, hidden
 		Error =						{ fg = flatwhite.error, bg = flatwhite.none, style = 'bold,underline' }, -- any erroneous construct
 		Todo =						{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -92,30 +92,30 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-		NormalFloat =			{ fg = flatwhite.fg, bg = flatwhite.float }, -- normal text and background color
+		NormalFloat =			{ fg = flatwhite.fg, bg = flatwhite.float }, -- normal black and background color
 		ColorColumn =			{ fg = flatwhite.none, bg = flatwhite.active }, --  used for the columns set with 'colorcolumn'
-		Conceal =				{ fg = flatwhite.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Conceal =				{ fg = flatwhite.disabled }, -- placeholder characters substituted for concealed black (see 'conceallevel')
 		Cursor =				{ fg = flatwhite.cursor, bg = flatwhite.none, style = 'reverse' }, -- the character under the cursor
 		CursorIM =				{ fg = flatwhite.cursor, bg = flatwhite.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
 		Directory =				{ fg = flatwhite.blue, bg = flatwhite.none }, -- directory names (and other special names in listings)
 		DiffAdd =				{ fg = flatwhite.green, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Added line
 		DiffChange =			{ fg = flatwhite.orange, bg = flatwhite.none, style = 'reverse' }, --  diff mode: Changed line
 		DiffDelete =			{ fg = flatwhite.red, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Deleted line
-		DiffText =				{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
+		DiffText =				{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'reverse' }, -- diff mode: Changed black within a changed line
 		EndOfBuffer =			{ fg = flatwhite.disabled },
 		ErrorMsg =				{ fg = flatwhite.none },
 		Folded =				{ fg = flatwhite.disabled, bg = flatwhite.none, style = 'italic' },
 		FoldColumn =			{ fg = flatwhite.blue },
 		IncSearch =				{ fg = flatwhite.highlight, bg = flatwhite.white, style = 'reverse' },
 		LineNr =				{ fg = flatwhite.line_numbers },
-		CursorLineNr =			{ fg = flatwhite.accent },
+		CursorLineNr =			{ fg = flatwhite.black},
 		MatchParen =			{ fg = flatwhite.yellow, bg = flatwhite.none, style = 'bold' },
 		ModeMsg =				{ fg = flatwhite.accent },
 		MoreMsg =				{ fg = flatwhite.accent },
 		NonText =				{ fg = flatwhite.disabled },
-		Pmenu =					{ fg = flatwhite.text, bg = flatwhite.contrast },
+		Pmenu =					{ fg = flatwhite.black, bg = flatwhite.contrast },
 		PmenuSel =				{ fg = flatwhite.accent, bg = flatwhite.active },
-		PmenuSbar =				{ fg = flatwhite.text, bg = flatwhite.contrast },
+		PmenuSbar =				{ fg = flatwhite.black, bg = flatwhite.contrast },
 		PmenuThumb =			{ fg = flatwhite.fg, bg = flatwhite.accent },
 		Question =				{ fg = flatwhite.green },
 		QuickFixLine =			{ fg = flatwhite.highlight, bg = flatwhite.white, style = 'reverse' },
@@ -127,9 +127,9 @@ theme.loadEditor = function ()
 		SpellLocal =			{ fg = flatwhite.cyan, bg = flatwhite.none, style = 'italic,undercurl' },
 		SpellRare =				{ fg = flatwhite.purple, bg = flatwhite.none, style = 'italic,undercurl' },
 		StatusLine =			{ fg = flatwhite.fg, bg = flatwhite.contrast },
-		StatusLineNC =  		{ fg = flatwhite.text, bg = flatwhite.disabled },
+		StatusLineNC =  		{ fg = flatwhite.black, bg = flatwhite.disabled },
 		StatusLineTerm =		{ fg = flatwhite.fg, bg = flatwhite.contrast },
-		StatusLineTermNC =		{ fg = flatwhite.text, bg = flatwhite.disabled },
+		StatusLineTermNC =		{ fg = flatwhite.black, bg = flatwhite.disabled },
 		TabLineFill =			{ fg = flatwhite.fg },
 		TablineSel =			{ fg = flatwhite.bg, bg = flatwhite.accent },
 		Tabline =				{ fg = flatwhite.fg },
@@ -165,10 +165,10 @@ theme.loadEditor = function ()
 
     --Set transparent background
     if vim.g.flatwhite_disable_background == true then
-		editor.Normal =				{ fg = flatwhite.fg, bg = flatwhite.none } -- normal text and background color
+		editor.Normal =				{ fg = flatwhite.fg, bg = flatwhite.none } -- normal black and background color
 		editor.SignColumn =			{ fg = flatwhite.fg, bg = flatwhite.none }
     else
-		editor.Normal =				{ fg = flatwhite.fg, bg = flatwhite.bg } -- normal text and background color
+		editor.Normal =				{ fg = flatwhite.fg, bg = flatwhite.bg } -- normal black and background color
 		editor.SignColumn =			{ fg = flatwhite.fg, bg = flatwhite.bg }
     end
 
@@ -207,85 +207,65 @@ theme.loadTreeSitter = function ()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        TSAnnotation =              { fg = flatwhite.black, bg = flatwhite.blue},
+        TSAnnotation =              { fg = flatwhite.black, bg = flatwhite.green},
         TSAttribute =               { fg = flatwhite.black, bg = flatwhite.blue},
-        TSBoolean=                  { fg = flatwhite.black, bg = flatwhite.blue},
-        TSCharacter=                { fg = flatwhite.black, bg = flatwhite.blue},
-        TSConstructor =             { fg = flatwhite.black, bg = flatwhite.blue},
-        TSConstant =                { fg = flatwhite.black, bg = flatwhite.blue},
-        TSConstBuiltin =            { fg = flatwhite.black, bg = flatwhite.blue},
-        TSConstMacro =              { fg = flatwhite.black, bg = flatwhite.blue},
-        TSError =                   { fg = flatwhite.black, bg = flatwhite.blue},
-        TSException =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSBoolean=                  { fg = flatwhite.black, bg = flatwhite.cyan},
+        TSCharacter=                { fg = flatwhite.black, bg = flatwhite.purple},
+        TSConstructor =             { fg = flatwhite.black, bg = flatwhite.orange},
+        TSConstant =                { fg = flatwhite.black, bg = flatwhite.pink},
+        TSConstBuiltin =            { fg = flatwhite.black, bg = flatwhite.red},
+        TSConstMacro =              { fg = flatwhite.black, bg = flatwhite.green},
+        TSError =                   { fg = flatwhite.black, bg = flatwhite.orange},
+        TSException =               { fg = flatwhite.black, bg = flatwhite.green},
         TSField =                   { fg = flatwhite.black, bg = flatwhite.blue},
         TSFloat =                   { fg = flatwhite.black, bg = flatwhite.blue},
-        TSFuncMacro =               { fg = flatwhite.black, bg = flatwhite.blue},
-        TSInclude =                 { fg = flatwhite.black, bg = flatwhite.blue},
-        TSLabel =                   { fg = flatwhite.black, bg = flatwhite.blue},
-        TSNamespace =               { fg = flatwhite.black, bg = flatwhite.blue},
-        TSNumber =                  { fg = flatwhite.black, bg = flatwhite.blue},
-        TSOperator =                { fg = flatwhite.black, bg = flatwhite.blue},
-        TSParameter =               { fg = flatwhite.black, bg = flatwhite.blue},
-        TSParameterReference=       { fg = flatwhite.black, bg = flatwhite.blue},
-        TSProperty =                { fg = flatwhite.black, bg = flatwhite.blue},
-        TSPunctDelimiter =          { fg = flatwhite.black, bg = flatwhite.blue},
-        TSPunctBracket =            { fg = flatwhite.black, bg = flatwhite.blue},
+        TSFuncMacro =               { fg = flatwhite.black, bg = flatwhite.pink},
+        TSInclude =                 { fg = flatwhite.black, bg = flatwhite.pink},
+        TSLabel =                   { fg = flatwhite.black, bg = flatwhite.orange},
+        TSNamespace =               { fg = flatwhite.black, bg = flatwhite.orange},
+        TSNumber =                  { fg = flatwhite.black, bg = flatwhite.orange},
+        TSOperator =                { fg = flatwhite.black, bg = flatwhite.orange},
+        TSParameter =               { fg = flatwhite.black, bg = flatwhite.orange},
+        TSParameterReference=       { fg = flatwhite.black, bg = flatwhite.cyan},
+        TSProperty =                { fg = flatwhite.black, bg = flatwhite.cyan},
+        TSPunctDelimiter =          { fg = flatwhite.black, bg = flatwhite.cyan},
+        TSPunctBracket =            { fg = flatwhite.black, bg = flatwhite.cyan},
         TSPunctSpecial =            { fg = flatwhite.black, bg = flatwhite.blue},
         TSString =                  { fg = flatwhite.black, bg = flatwhite.blue},
         TSStringRegex =             { fg = flatwhite.black, bg = flatwhite.blue},
-        TSStringEscape =            { fg = flatwhite.black, bg = flatwhite.blue},
-        TSSymbol =                  { fg = flatwhite.black, bg = flatwhite.blue},
-        TSType =                    { fg = flatwhite.black, bg = flatwhite.blue},
-        TSTypeBuiltin =             { fg = flatwhite.black, bg = flatwhite.blue},
-        TSTag =                     { fg = flatwhite.black, bg = flatwhite.blue},
-        TSTagDelimiter =            { fg = flatwhite.black, bg = flatwhite.blue},
-        TSText =                    { fg = flatwhite.black, bg = flatwhite.blue},
-        TSTextReference =           { fg = flatwhite.black, bg = flatwhite.blue},
-        TSEmphasis =                { fg = flatwhite.black, bg = flatwhite.blue},
-        TSUnderline =               { fg = flatwhite.black, bg = flatwhite.blue},
-        TSTitle =                   { fg = flatwhite.black, bg = flatwhite.blue},
-        TSLiteral =                 { fg = flatwhite.black, bg = flatwhite.blue},
-        TSURI =                     { fg = flatwhite.black, bg = flatwhite.blue},
+        TSStringEscape =            { fg = flatwhite.black, bg = flatwhite.purple},
+        TSSymbol =                  { fg = flatwhite.black, bg = flatwhite.purple},
+        TSType =                    { fg = flatwhite.black, bg = flatwhite.purple},
+        TSTypeBuiltin =             { fg = flatwhite.black, bg = flatwhite.purple},
+        TSTag =                     { fg = flatwhite.black, bg = flatwhite.purple},
+        TSTagDelimiter =            { fg = flatwhite.black},
+        TSText =                    { fg = flatwhite.black},
+        TSTextReference =           { fg = flatwhite.black},
+        TSEmphasis =                { fg = flatwhite.black},
+        TSUnderline =               { fg = flatwhite.black},
+        TSTitle =                   { fg = flatwhite.black},
+        TSLiteral =                 { fg = flatwhite.black},
+        TSURI =                     { fg = flatwhite.black},
+
+
     }
 
     -- Options:
 
     -- Italic comments
-    if vim.g.flatwhite_italic_comments == true then
-        treesitter.TSComment=                  { fg = flatwhite.comments , bg = flatwhite.none, style = 'italic' }    -- For comment blocks.
-    else
         treesitter.TSComment=                  { fg = flatwhite.comments }    -- For comment blocks.
-    end
 
-    if vim.g.flatwhite_italic_keywords == true then
-        treesitter.TSConditional =             { fg = flatwhite.purple, style = 'italic' }    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = flatwhite.purple, style = 'italic' } -- For keywords that don't fall in previous categories.
-        treesitter.TSRepeat =                  { fg = flatwhite.purple, style = 'italic' }    -- For keywords related to loops.
-        treesitter.TSKeywordFunction =         { fg = flatwhite.purple, style = 'italic' } -- For keywords used to define a fuction.
-    else
         treesitter.TSConditional =             { fg = flatwhite.purple }    -- For keywords related to conditionnals.
         treesitter.TSKeyword =                 { fg = flatwhite.purple } -- For keywords that don't fall in previous categories.
         treesitter.TSRepeat =                  { fg = flatwhite.purple }    -- For keywords related to loops.
         treesitter.TSKeywordFunction =         { fg = flatwhite.purple } -- For keywords used to define a fuction.
-    end
 
-    if vim.g.flatwhite_italic_functions == true then
-        treesitter.TSFunction =                { fg = flatwhite.blue, style = 'italic' }    -- For fuction (calls and definitions).
-        treesitter.TSMethod =                  { fg = flatwhite.blue, style = 'italic' }    -- For method calls and definitions.
-        treesitter.TSFuncBuiltin =             { fg = flatwhite.cyan, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
-    else
-        treesitter.TSFunction =                { fg = flatwhite.blue }    -- For fuction (calls and definitions).
-        treesitter.TSMethod =                  { fg = flatwhite.blue }    -- For method calls and definitions.
-        treesitter.TSFuncBuiltin =             { fg = flatwhite.cyan }    -- For builtin functions: `table.insert` in Lua.
-    end
+        treesitter.TSFunction =                { fg = flatwhite.black, bg = flatwhite.blue}
+        treesitter.TSMethod =                  { fg = flatwhite.black, bg = flatwhite.blue}
+        treesitter.TSFuncBuiltin =             { fg = flatwhite.black, bg = flatwhite.blue}
 
-    if vim.g.flatwhite_italic_variables == true then
-        treesitter.TSVariable =                { fg = flatwhite.gray, style = 'italic' } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = flatwhite.gray, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
-    else
-        treesitter.TSVariable =                { fg = flatwhite.gray } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = flatwhite.gray } -- Variable names that are defined by the languages, like `this` or `self`.
-    end
+        treesitter.TSVariable =                { fg = flatwhite.black, bg = flatwhite.blue}
+        treesitter.TSVariableBuiltin =         { fg = flatwhite.black, bg = flatwhite.blue}
 
     return treesitter
 
@@ -295,27 +275,27 @@ theme.loadLSP = function ()
     -- Lsp highlight groups
 
     local lsp = {
-        LspDiagnosticsDefaultError =            { fg = flatwhite.error }, -- used for "Error" diagnostic virtual text
+        LspDiagnosticsDefaultError =            { fg = flatwhite.error }, -- used for "Error" diagnostic virtual black
         LspDiagnosticsSignError =               { fg = flatwhite.error }, -- used for "Error" diagnostic signs in sign column
         LspDiagnosticsFloatingError =           { fg = flatwhite.error }, -- used for "Error" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextError =        { fg = flatwhite.error }, -- Virtual text "Error"
+        LspDiagnosticsVirtualTextError =        { fg = flatwhite.error }, -- Virtual black "Error"
         LspDiagnosticsUnderlineError =          { style = 'undercurl', sp = flatwhite.error }, -- used to underline "Error" diagnostics.
         LspDiagnosticsDefaultWarning =          { fg = flatwhite.yellow}, -- used for "Warning" diagnostic signs in sign column
         LspDiagnosticsSignWarning =             { fg = flatwhite.yellow}, -- used for "Warning" diagnostic signs in sign column
         LspDiagnosticsFloatingWarning =         { fg = flatwhite.yellow}, -- used for "Warning" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextWarning =      { fg = flatwhite.yellow}, -- Virtual text "Warning"
+        LspDiagnosticsVirtualTextWarning =      { fg = flatwhite.yellow}, -- Virtual black "Warning"
         LspDiagnosticsUnderlineWarning =        { style = 'undercurl', sp = flatwhite.yellow }, -- used to underline "Warning" diagnostics.
-        LspDiagnosticsDefaultInformation =      { fg = flatwhite.paleblue }, -- used for "Information" diagnostic virtual text
+        LspDiagnosticsDefaultInformation =      { fg = flatwhite.paleblue }, -- used for "Information" diagnostic virtual black
         LspDiagnosticsSignInformation =         { fg = flatwhite.paleblue },  -- used for "Information" diagnostic signs in sign column
         LspDiagnosticsFloatingInformation =     { fg = flatwhite.paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextInformation =  { fg = flatwhite.paleblue }, -- Virtual text "Information"
+        LspDiagnosticsVirtualTextInformation =  { fg = flatwhite.paleblue }, -- Virtual black "Information"
         LspDiagnosticsUnderlineInformation =    { style = 'undercurl', sp = flatwhite.paleblue }, -- used to underline "Information" diagnostics.
-        LspDiagnosticsDefaultHint =             { fg = flatwhite.purple  },  -- used for "Hint" diagnostic virtual text
+        LspDiagnosticsDefaultHint =             { fg = flatwhite.purple  },  -- used for "Hint" diagnostic virtual black
         LspDiagnosticsSignHint =                { fg = flatwhite.purple  }, -- used for "Hint" diagnostic signs in sign column
         LspDiagnosticsFloatingHint =            { fg = flatwhite.purple  }, -- used for "Hint" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextHint =         { fg = flatwhite.purple  }, -- Virtual text "Hint"
+        LspDiagnosticsVirtualTextHint =         { fg = flatwhite.purple  }, -- Virtual black "Hint"
         LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = flatwhite.paleblue }, -- used to underline "Hint" diagnostics.
-        LspReferenceText =                      { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "text" references
+        LspReferenceText =                      { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "black" references
         LspReferenceRead =                      { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "read" references
         LspReferenceWrite =                     { fg = flatwhite.accent, bg = flatwhite.highlight }, -- used for highlighting "write" references
     }
@@ -330,7 +310,7 @@ theme.loadPlugins = function()
     local plugins = {
 
         -- LspTrouble
-        LspTroubleText =                        { fg = flatwhite.text },
+        LspTroubleText =                        { fg = flatwhite.black },
         LspTroubleCount =                       { fg = flatwhite.purple, bg = flatwhite.active },
         LspTroubleNormal =                      { fg = flatwhite.fg, bg = flatwhite.sidebar },
 
@@ -349,7 +329,7 @@ theme.loadPlugins = function()
         NeogitRemote =                          { fg = flatwhite.purple },
         NeogitHunkHeader =                      { fg = flatwhite.fg, bg = flatwhite.highlight },
         NeogitHunkHeaderHighlight =             { fg = flatwhite.blue, bg = flatwhite.contrast },
-        NeogitDiffContextHighlight =            { fg = flatwhite.text, bg = flatwhite.contrast },
+        NeogitDiffConblackHighlight =            { fg = flatwhite.black, bg = flatwhite.contrast },
         NeogitDiffDeleteHighlight =             { fg = flatwhite.red },
         NeogitDiffAddHighlight =                { fg = flatwhite.green },
 
@@ -396,7 +376,7 @@ theme.loadPlugins = function()
 
         -- WhichKey
         WhichKey =                              { fg = flatwhite.accent , style = 'bold'},
-        WhichKeyGroup =                         { fg = flatwhite.text },
+        WhichKeyGroup =                         { fg = flatwhite.black },
         WhichKeyDesc =                          { fg = flatwhite.blue, style = 'italic' },
         WhichKeySeperator =                     { fg = flatwhite.fg },
         WhichKeyFloating =                      { bg = flatwhite.float },
@@ -435,7 +415,7 @@ theme.loadPlugins = function()
 
         -- Indent Blankline
         IndentBlanklineChar =                   { fg = flatwhite.highlight },
-        IndentBlanklineContextChar =            { fg = flatwhite.disabled },
+        IndentBlanklineConblackChar =            { fg = flatwhite.disabled },
 
 	 -- Nvim dap
          DapBreakpoint =                         { fg = flatwhite.red },
