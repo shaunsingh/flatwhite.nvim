@@ -317,7 +317,7 @@ theme.loadPlugins = function()
         -- Diff
         diffAdded =                             { fg = flatwhite.green },
         diffRemoved =                           { fg = flatwhite.red },
-        diffChanged =                           { fg = flatwhite.black },
+        diffChanged =                           { fg = flatwhite.yellow },
         diffOldFile =                           { fg = flatwhite.yelow },
         diffNewFile =                           { fg = flatwhite.orange },
         diffFile =                              { fg = flatwhite.blue },
@@ -335,16 +335,16 @@ theme.loadPlugins = function()
 
         -- GitGutter
         GitGutterAdd =                          { fg = flatwhite.green }, -- diff mode: Added line |diff.txt|
-        GitGutterChange =                       { fg = flatwhite.black }, -- diff mode: Changed line |diff.txt|
+        GitGutterChange =                       { fg = flatwhite.yellow }, -- diff mode: Changed line |diff.txt|
         GitGutterDelete =                       { fg = flatwhite.red }, -- diff mode: Deleted line |diff.txt|
 
         -- GitSigns
         GitSignsAdd =                           { fg = flatwhite.green }, -- diff mode: Added line |diff.txt|
         GitSignsAddNr =                         { fg = flatwhite.green }, -- diff mode: Added line |diff.txt|
         GitSignsAddLn =                         { fg = flatwhite.green }, -- diff mode: Added line |diff.txt|
-        GitSignsChange =                        { fg = flatwhite.black }, -- diff mode: Changed line |diff.txt|
-        GitSignsChangeNr =                      { fg = flatwhite.black }, -- diff mode: Changed line |diff.txt|
-        GitSignsChangeLn =                      { fg = flatwhite.black }, -- diff mode: Changed line |diff.txt|
+        GitSignsChange =                        { fg = flatwhite.yellow }, -- diff mode: Changed line |diff.txt|
+        GitSignsChangeNr =                      { fg = flatwhite.yellow }, -- diff mode: Changed line |diff.txt|
+        GitSignsChangeLn =                      { fg = flatwhite.yellow }, -- diff mode: Changed line |diff.txt|
         GitSignsDelete =                        { fg = flatwhite.red }, -- diff mode: Deleted line |diff.txt|
         GitSignsDeleteNr =                      { fg = flatwhite.red }, -- diff mode: Deleted line |diff.txt|
         GitSignsDeleteLn =                      { fg = flatwhite.red }, -- diff mode: Deleted line |diff.txt|
@@ -360,9 +360,9 @@ theme.loadPlugins = function()
 
         -- NvimTree
         NvimTreeRootFolder =                    { fg = flatwhite.blue, style = "bold" },
-        NvimTreeGitDirty =                      { fg = flatwhite.black },
+        NvimTreeGitDirty =                      { fg = flatwhite.yellow },
         NvimTreeGitNew =                        { fg = flatwhite.green },
-        NvimTreeImageFile =                     { fg = flatwhite.black },
+        NvimTreeImageFile =                     { fg = flatwhite.yellow },
         NvimTreeExecFile =                      { fg = flatwhite.green },
         NvimTreeSpecialFile =                   { fg = flatwhite.purple , style = "underline" },
         NvimTreeFolderName=                     { fg = flatwhite.paleblue },
@@ -370,7 +370,7 @@ theme.loadPlugins = function()
         NvimTreeFolderIcon=                     { fg = flatwhite.accent },
         NvimTreeIndentMarker =                  { fg  = flatwhite.disabled },
         LspDiagnosticsError =                   { fg = flatwhite.error },
-        LspDiagnosticsWarning =                 { fg = flatwhite.black },
+        LspDiagnosticsWarning =                 { fg = flatwhite.yellow },
         LspDiagnosticsInformation =             { fg = flatwhite.paleblue },
         LspDiagnosticsHint =                    { fg = flatwhite.purple },
 
@@ -384,7 +384,7 @@ theme.loadPlugins = function()
 
         -- LspSaga
         DiagnosticError =                       { fg = flatwhite.error },
-        DiagnosticWarning =                     { fg = flatwhite.black },
+        DiagnosticWarning =                     { fg = flatwhite.yellow },
         DiagnosticInformation =                 { fg = flatwhite.paleblue },
         DiagnosticHint =                        { fg = flatwhite.purple },
         DiagnosticTruncateLine =                { fg = flatwhite.fg },
