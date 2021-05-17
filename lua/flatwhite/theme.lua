@@ -207,47 +207,45 @@ theme.loadTreeSitter = function ()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        TSAnnotation =              { fg = flatwhite.red },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-        TSAttribute =               { fg = flatwhite.yellow },    -- (unstable) TODO: docs
-        TSBoolean=                  { fg = flatwhite.orange },    -- For booleans.
-        TSCharacter=                { fg = flatwhite.orange },    -- For characters.
-        TSConstructor =             { fg = flatwhite.purple }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        TSConstant =                { fg = flatwhite.yellow },    -- For constants
-        TSConstBuiltin =            { fg = flatwhite.blue },    -- For constant that are built in the language: `nil` in Lua.
-        TSConstMacro =              { fg = flatwhite.blue },    -- For constants that are defined by macros: `NULL` in C.
-        TSError =                   { fg = flatwhite.error },    -- For syntax/parser errors.
-        TSException =               { fg = flatwhite.yellow },    -- For exception related keywords.
-        TSField =                   { fg = flatwhite.gray }, -- For fields.
-        TSFloat =                   { fg = flatwhite.red },    -- For floats.
-        TSFuncMacro =               { fg = flatwhite.blue },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude =                 { fg = flatwhite.cyan },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSLabel =                   { fg = flatwhite.red }, -- For labels: `label:` in C and `:label:` in Lua.
-        TSNamespace =               { fg = flatwhite.yellow },    -- For identifiers referring to modules and namespaces.
-        --TSNone =                    { },    -- TODO: docs
-        TSNumber =                  { fg = flatwhite.orange },    -- For all numbers
-        TSOperator =                { fg = flatwhite.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter =               { fg = flatwhite.paleblue }, -- For parameters of a function.
-        TSParameterReference=       { fg = flatwhite.paleblue },    -- For references to parameters of a function.
-        TSProperty =                { fg = flatwhite.paleblue }, -- Same as `TSField`.
-        TSPunctDelimiter =          { fg = flatwhite.cyan }, -- For delimiters ie: `.`
-        TSPunctBracket =            { fg = flatwhite.cyan }, -- For brackets and parens.
-        TSPunctSpecial =            { fg = flatwhite.cyan }, -- For special punctutation that does not fall in the catagories before.
-        TSString =                  { fg = flatwhite.green },    -- For strings.
-        TSStringRegex =             { fg = flatwhite.blue }, -- For regexes.
-        TSStringEscape =            { fg = flatwhite.disabled }, -- For escape characters within a string.
-        TSSymbol =                  { fg = flatwhite.yellow },    -- For identifiers referring to symbols or atoms.
-        TSType =                    { fg = flatwhite.purple },    -- For types.
-        TSTypeBuiltin =             { fg = flatwhite.purple },    -- For builtin types.
-        TSTag =                     { fg = flatwhite.red },    -- Tags like html tag names.
-        TSTagDelimiter =            { fg = flatwhite.yellow },    -- Tag delimiter like `<` `>` `/`
-        TSText =                    { fg = flatwhite.text },    -- For strings considered text in a markup language.
-        TSTextReference =           { fg = flatwhite.yellow }, -- FIXME
-        TSEmphasis =                { fg = flatwhite.paleblue },    -- For text to be represented with emphasis.
-        TSUnderline =               { fg = flatwhite.fg, bg = flatwhite.none, style = 'underline' },    -- For text to be represented with an underline.
-        TSStrike =                  { },    -- For strikethrough text.
-        TSTitle =                   { fg = flatwhite.paleblue, bg = flatwhite.none, style = 'bold' },    -- Text that is part of a title.
-        TSLiteral =                 { fg = flatwhite.fg },    -- Literal text.
-        TSURI =                     { fg = flatwhite.link },    -- Any URI like a link or email.
+        TSAnnotation =              { fg = flatwhite.black, bg = flatwhite.blue},
+        TSAttribute =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSBoolean=                  { fg = flatwhite.black, bg = flatwhite.blue},
+        TSCharacter=                { fg = flatwhite.black, bg = flatwhite.blue},
+        TSConstructor =             { fg = flatwhite.black, bg = flatwhite.blue},
+        TSConstant =                { fg = flatwhite.black, bg = flatwhite.blue},
+        TSConstBuiltin =            { fg = flatwhite.black, bg = flatwhite.blue},
+        TSConstMacro =              { fg = flatwhite.black, bg = flatwhite.blue},
+        TSError =                   { fg = flatwhite.black, bg = flatwhite.blue},
+        TSException =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSField =                   { fg = flatwhite.black, bg = flatwhite.blue},
+        TSFloat =                   { fg = flatwhite.black, bg = flatwhite.blue},
+        TSFuncMacro =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSInclude =                 { fg = flatwhite.black, bg = flatwhite.blue},
+        TSLabel =                   { fg = flatwhite.black, bg = flatwhite.blue},
+        TSNamespace =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSNumber =                  { fg = flatwhite.black, bg = flatwhite.blue},
+        TSOperator =                { fg = flatwhite.black, bg = flatwhite.blue},
+        TSParameter =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSParameterReference=       { fg = flatwhite.black, bg = flatwhite.blue},
+        TSProperty =                { fg = flatwhite.black, bg = flatwhite.blue},
+        TSPunctDelimiter =          { fg = flatwhite.black, bg = flatwhite.blue},
+        TSPunctBracket =            { fg = flatwhite.black, bg = flatwhite.blue},
+        TSPunctSpecial =            { fg = flatwhite.black, bg = flatwhite.blue},
+        TSString =                  { fg = flatwhite.black, bg = flatwhite.blue},
+        TSStringRegex =             { fg = flatwhite.black, bg = flatwhite.blue},
+        TSStringEscape =            { fg = flatwhite.black, bg = flatwhite.blue},
+        TSSymbol =                  { fg = flatwhite.black, bg = flatwhite.blue},
+        TSType =                    { fg = flatwhite.black, bg = flatwhite.blue},
+        TSTypeBuiltin =             { fg = flatwhite.black, bg = flatwhite.blue},
+        TSTag =                     { fg = flatwhite.black, bg = flatwhite.blue},
+        TSTagDelimiter =            { fg = flatwhite.black, bg = flatwhite.blue},
+        TSText =                    { fg = flatwhite.black, bg = flatwhite.blue},
+        TSTextReference =           { fg = flatwhite.black, bg = flatwhite.blue},
+        TSEmphasis =                { fg = flatwhite.black, bg = flatwhite.blue},
+        TSUnderline =               { fg = flatwhite.black, bg = flatwhite.blue},
+        TSTitle =                   { fg = flatwhite.black, bg = flatwhite.blue},
+        TSLiteral =                 { fg = flatwhite.black, bg = flatwhite.blue},
+        TSURI =                     { fg = flatwhite.black, bg = flatwhite.blue},
     }
 
     -- Options:
